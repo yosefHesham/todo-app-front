@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import TaskPage from "./pages/tasks";
 
 function App() {
