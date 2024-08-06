@@ -1,4 +1,3 @@
-// src/features/tasks/tasksSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import {
   createTask,
@@ -8,7 +7,7 @@ import {
   getSummary,
 } from "../services/taskService";
 
-interface Task {
+export interface Task {
   _id: string;
   description: string;
   fromTime: Date;
@@ -76,7 +75,6 @@ export const getSummaryAsync = createAsyncThunk<Summary, string>(
   }
 );
 
-// Create slice
 const tasksSlice = createSlice({
   name: "tasks",
   initialState,
