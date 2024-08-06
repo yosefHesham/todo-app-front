@@ -22,6 +22,7 @@ const TaskPage = () => {
     setShowModal(!showModal);
   };
 
+  console.log(summary.totalDuration);
   useEffect(() => {
     dispatch(getSummaryAsync(new Date().toString()));
   }, [tasks]);
@@ -53,6 +54,7 @@ const TaskPage = () => {
           <PrimaryButton
             buttonText=" + Add Task"
             handleClick={handleModal}
+            isDisabled={summary.totalDuration.toFixed(0) >= "8"}
             classes="border border-red-500 text-red-500 rounded-md p-3"
           />
         </div>
