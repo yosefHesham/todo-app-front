@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://api.todo.fr.to/tasks";
 
 export const createTask = async (taskData: any) => {
   const response = await axios.post(`${BASE_URL}/tasks`, taskData);
