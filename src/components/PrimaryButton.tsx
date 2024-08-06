@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Button } from "./ui/button";
 
 interface IProps {
@@ -17,11 +18,16 @@ const PrimaryButton = ({
   return (
     <Button
       type={type}
-      disabled={isDisabled}
       className={`${classes} ${
         isDisabled ? "bg-gray-300  text-gray-600 border-gray-100" : ""
       }`}
-      onClick={handleClick}
+      onClick={() => {
+        if (isDisabled) {
+          toast("Maximum Duration Exceeded (8Hrs)");
+        } else {
+          handleClick();
+        }
+      }}
     >
       {buttonText}
     </Button>
