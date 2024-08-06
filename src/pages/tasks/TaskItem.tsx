@@ -14,7 +14,7 @@ interface IProps {
   _id: string;
 }
 const TaskItem = ({ description, toTime, _id, fromTime }: IProps) => {
-  const dueDate = format(toTime, "HH:MM");
+  const dueDate = format(toTime, "HH:mm");
 
   const dispatch = useDispatch<AppDispatch>();
 

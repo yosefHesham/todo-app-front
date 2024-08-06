@@ -68,7 +68,8 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
       }
       const diffInMs = data.toTime.getTime() - data.fromTime.getTime();
 
-      const duration = diffInMs / (1000 * 60 * 60);
+      const duration = (diffInMs / (1000 * 60 * 60)) % 10;
+      console.log(duration, totalDuration);
       if (duration > 8) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
