@@ -22,7 +22,6 @@ const TaskPage = () => {
     setShowModal(!showModal);
   };
 
-  console.log(summary.totalDuration);
   useEffect(() => {
     dispatch(getSummaryAsync(new Date().toString()));
   }, [tasks]);
