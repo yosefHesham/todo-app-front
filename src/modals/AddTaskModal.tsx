@@ -12,7 +12,7 @@ const AddTaskModal = ({ toUpdate, hideDialog }: IProps) => {
       onClick={hideDialog}
     >
       <section
-        className="rounded-xl p-8 shadow-md bg-white"
+        className="rounded-xl py-8 px-14 shadow-md bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         <TaskForm hideDialog={hideDialog} toUpdate={toUpdate} />

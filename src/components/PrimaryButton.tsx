@@ -18,8 +18,8 @@ const PrimaryButton = ({
   return (
     <Button
       type={type}
-      className={`${classes} ${
-        isDisabled ? "bg-gray-300  text-gray-600 border-gray-100" : ""
+      className={`${classes} transition-all duration-300 hover:shadow-xl hover:bg-red-500 hover:text-white ${
+        isDisabled ? "bg-gray-300    border-gray-100" : ""
       }`}
       onClick={() => {
         if (isDisabled) {
