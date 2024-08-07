@@ -61,7 +61,7 @@ const TaskPage = () => {
             buttonText="+"
             handleClick={handleModal}
             isDisabled={summary.totalDuration.toFixed(0) >= "8"}
-            classes="border border-red-500  md:hidden text-red-500  size-8 font-bold text-lg flex items-center justify-center rounded-full "
+            classes="border border-red-500  md:hidden text-red-500  size-8 font-bold text-lg flex items-center justify-center rounded-full p-3 "
           />
         </div>
         <p className="font-bold my-5"> Tasks</p>
