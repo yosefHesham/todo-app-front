@@ -139,7 +139,7 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
           </FormControl>
         </FormItem>
 
-        <FormItem className="flex gap-2 flex-col">
+        <FormItem className="flex gap-2  flex-col">
           <FormLabel>From Time</FormLabel>
           <FormControl>
             <Controller
@@ -153,7 +153,7 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
                     selected={field.value}
                     onChange={field.onChange}
                     onBlur={field.onBlur}
-                    className="border bg-gray-100 p-2 border-gray-400 rounded-md"
+                    className="border bg-gray-100 p-2 w-full border-gray-400 rounded-md"
                     showTimeSelect
                     icon={true}
                     dateFormat="Pp"
@@ -180,7 +180,7 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
                   <DatePicker
                     minDate={new Date()}
                     maxDate={new Date()}
-                    className="border bg-gray-100 p-2 border-gray-400 rounded-md"
+                    className="border bg-gray-100 p-2 w-full border-gray-400 rounded-md"
                     selected={field.value}
                     onChange={field.onChange}
                     onBlur={field.onBlur}

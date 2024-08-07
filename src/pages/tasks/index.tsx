@@ -54,7 +54,14 @@ const TaskPage = () => {
             buttonText=" + Add Task"
             handleClick={handleModal}
             isDisabled={summary.totalDuration.toFixed(0) >= "8"}
-            classes="border border-red-500 text-red-500 rounded-md p-3"
+            classes="border border-red-500 hidden md:block text-red-500 rounded-md p-3"
+          />
+
+          <PrimaryButton
+            buttonText="+"
+            handleClick={handleModal}
+            isDisabled={summary.totalDuration.toFixed(0) >= "8"}
+            classes="border border-red-500  md:hidden text-red-500  size-8 font-bold text-lg flex items-center justify-center rounded-full "
           />
         </div>
         <p className="font-bold my-5"> Tasks</p>
