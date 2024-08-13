@@ -75,7 +75,19 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
           path: ["toTime"],
           message: "Task Duration Cannot Exceed 8 hours",
         });
-      } else if (duration + totalDuration > 8) {
+      }
+      let adjustedDuration = totalDuration;
+      if (toUpdate) {
+        const { toTime: existingToTime, fromTime: existingFromTime } = toUpdate;
+        const existingDuration =
+          (new Date(existingToTime!).getTime() -
+            new Date(existingFromTime!).getTime()) /
+          (1000 * 60 * 60);
+        adjustedDuration -= existingDuration;
+      }
+
+      adjustedDuration += duration;
+      if (adjustedDuration > 8) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           path: ["toTime"],
@@ -97,6 +109,7 @@ const TaskForm = ({ toUpdate, hideDialog }: IProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log("clicking");
     if (toUpdate) {
       dispatch(updateTaskAsync({ id: toUpdate.id!, updates: { ...values } }));
       toast("Task has been updated");
